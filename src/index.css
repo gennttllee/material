@@ -1,13 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '~react-image-gallery/styles/css/image-gallery.css';
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+    border-radius: 4px;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    opacity: 0.85;
+    /* background: #C8CDD4; */
+    /* -webkit-box-shadow: inset 0 0 3px rgba(18, 17, 17, 0.5); */
+  }
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    opacity: 1;
+    /* background: #C8CDD4; */
+    /* -webkit-box-shadow: inset 0 0 3px rgba(18, 17, 17, 0.5); */
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Hide Scrollbar */
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+  }
+
+  /* Hide Scrollbar */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+/* removes the scrollar every where */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Height Animation */
+.zero-height {
+  max-height: 0;
+  transition: max-height 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.auto-height {
+  max-height: 500px;
+  transition: max-height 0.2s ease-in-out;
+}
+
+.gwrapper {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: blue;
+}
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: 'Regular';
+  src: url(./assets/fonts/Satoshi-Regular.otf);
+}
+@font-face {
+  font-family: 'Medium';
+  src: url(./assets/fonts/Satoshi-Medium.otf);
+}
+
+@font-face {
+  font-family: 'SemiBold';
+  src: url(./assets/fonts/Satoshi-Bold.otf);
+}
+
+@font-face {
+  font-family: 'commons';
+  src: url(./assets/fonts/TT\ Commons\ Regular.otf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'commons';
+  src: url(./assets/fonts/TT\ Commons\ Medium.otf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'commons';
+  src: url(./assets/fonts/TT\ Commons\ DemiBold.otf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'commons';
+  src: url(./assets/fonts/TT\ Commons\ DemiBold.otf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'commons';
+  src: url(./assets/fonts/TT\ Commons\ Bold.otf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'satoshi';
+  src: url(./assets/fonts/Satoshi-Variable.woff2) format('woff2');
+  font-display: swap;
+  font-weight: 100 1000;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Regular' !important;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.react-calendar__tile--now {
+  background: rgba(30, 143, 255, 0.6) !important;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: rgb(1, 98, 195) !important;
+}
+
+.react-calendar {
+  border: none !important;
+}
+
+.stripe-4 {
+  background: repeating-linear-gradient(
+    -55deg,
+    white,
+    whitesmoke 5px,
+    whitesmoke 5px,
+    whitesmoke 5px
+  );
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  outline: none;
+  color: #000 !important;
+  -webkit-text-size-adjust: 1.2em;
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.spacer {
+  margin: 12px;
+}
+
+.Toastify__close-button {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  z-index: 1;
+  transform: translateY(-50%) !important;
+}
+
+.Toastify__toast-icon {
+  display: none !important;
+}
+
+.Toastify__toast-body {
+  font-family: 'Medium' !important;
+}
+
+.Toastify__toast {
+  padding: 0 8px !important;
+}
+
+.Toastify__progress-bar {
+  background: transparent !important;
+  height: 0px !important;
+}
+.Dropdown-control {
+  border: none !important;
+  padding: 8px 8px 8px 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 1em;
+}
+
+.Dropdown-placeholder {
+  font-family: 'Medium';
 }
